@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185EF9021A12A0E5000762D2 /* DataPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185EF9011A12A0E5000762D2 /* DataPage.swift */; };
+		185EF9041A12A5DB000762D2 /* AddNewTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185EF9031A12A5DB000762D2 /* AddNewTime.swift */; };
 		189277841A110DC6004280A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189277831A110DC6004280A0 /* AppDelegate.swift */; };
 		189277871A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 189277851A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld */; };
-		189277891A110DC6004280A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189277881A110DC6004280A0 /* ViewController.swift */; };
 		1892778C1A110DC6004280A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1892778A1A110DC6004280A0 /* Main.storyboard */; };
 		1892778E1A110DC6004280A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1892778D1A110DC6004280A0 /* Images.xcassets */; };
 		189277911A110DC6004280A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892778F1A110DC6004280A0 /* LaunchScreen.xib */; };
 		1892779D1A110DC6004280A0 /* Simply_StopWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892779C1A110DC6004280A0 /* Simply_StopWatchTests.swift */; };
+		189277A91A111E66004280A0 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189277A81A111E66004280A0 /* MainPage.swift */; };
+		18D2D9E51A12E7EC005D7E78 /* SimplyStopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2D9E41A12E7EC005D7E78 /* SimplyStopWatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +30,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		185EF9011A12A0E5000762D2 /* DataPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPage.swift; sourceTree = "<group>"; };
+		185EF9031A12A5DB000762D2 /* AddNewTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTime.swift; sourceTree = "<group>"; };
 		1892777E1A110DC6004280A0 /* Simply StopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simply StopWatch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189277821A110DC6004280A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		189277831A110DC6004280A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		189277861A110DC6004280A0 /* Simply_StopWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Simply_StopWatch.xcdatamodel; sourceTree = "<group>"; };
-		189277881A110DC6004280A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1892778B1A110DC6004280A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1892778D1A110DC6004280A0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		189277901A110DC6004280A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		189277961A110DC6004280A0 /* Simply StopWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simply StopWatchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1892779B1A110DC6004280A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1892779C1A110DC6004280A0 /* Simply_StopWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simply_StopWatchTests.swift; sourceTree = "<group>"; };
+		189277A81A111E66004280A0 /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		18D2D9E41A12E7EC005D7E78 /* SimplyStopWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplyStopWatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +86,14 @@
 			isa = PBXGroup;
 			children = (
 				189277831A110DC6004280A0 /* AppDelegate.swift */,
-				189277881A110DC6004280A0 /* ViewController.swift */,
+				189277A81A111E66004280A0 /* MainPage.swift */,
+				185EF9031A12A5DB000762D2 /* AddNewTime.swift */,
+				185EF9011A12A0E5000762D2 /* DataPage.swift */,
 				1892778A1A110DC6004280A0 /* Main.storyboard */,
 				1892778D1A110DC6004280A0 /* Images.xcassets */,
 				1892778F1A110DC6004280A0 /* LaunchScreen.xib */,
 				189277851A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld */,
+				18D2D9E41A12E7EC005D7E78 /* SimplyStopWatch.swift */,
 				189277811A110DC6004280A0 /* Supporting Files */,
 			);
 			path = "Simply StopWatch";
@@ -215,9 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				189277891A110DC6004280A0 /* ViewController.swift in Sources */,
+				185EF9021A12A0E5000762D2 /* DataPage.swift in Sources */,
 				189277841A110DC6004280A0 /* AppDelegate.swift in Sources */,
 				189277871A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld in Sources */,
+				18D2D9E51A12E7EC005D7E78 /* SimplyStopWatch.swift in Sources */,
+				189277A91A111E66004280A0 /* MainPage.swift in Sources */,
+				185EF9041A12A5DB000762D2 /* AddNewTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +421,7 @@
 				189277A21A110DC6004280A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		189277A31A110DC6004280A0 /* Build configuration list for PBXNativeTarget "Simply StopWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +430,7 @@
 				189277A51A110DC6004280A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
