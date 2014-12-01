@@ -89,11 +89,11 @@
 				189277A81A111E66004280A0 /* MainPage.swift */,
 				185EF9031A12A5DB000762D2 /* AddNewTime.swift */,
 				185EF9011A12A0E5000762D2 /* DataPage.swift */,
+				18D2D9E41A12E7EC005D7E78 /* SimplyStopWatch.swift */,
 				1892778A1A110DC6004280A0 /* Main.storyboard */,
 				1892778D1A110DC6004280A0 /* Images.xcassets */,
 				1892778F1A110DC6004280A0 /* LaunchScreen.xib */,
 				189277851A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld */,
-				18D2D9E41A12E7EC005D7E78 /* SimplyStopWatch.swift */,
 				189277811A110DC6004280A0 /* Supporting Files */,
 			);
 			path = "Simply StopWatch";
