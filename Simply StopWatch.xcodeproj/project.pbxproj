@@ -16,7 +16,7 @@
 		189277911A110DC6004280A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892778F1A110DC6004280A0 /* LaunchScreen.xib */; };
 		1892779D1A110DC6004280A0 /* Simply_StopWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892779C1A110DC6004280A0 /* Simply_StopWatchTests.swift */; };
 		189277A91A111E66004280A0 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189277A81A111E66004280A0 /* MainPage.swift */; };
-		18D2D9E51A12E7EC005D7E78 /* SimplyStopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2D9E41A12E7EC005D7E78 /* SimplyStopWatch.swift */; };
+		18D2986B1A375DDA00B6AB45 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2986A1A375DDA00B6AB45 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		1892779B1A110DC6004280A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1892779C1A110DC6004280A0 /* Simply_StopWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simply_StopWatchTests.swift; sourceTree = "<group>"; };
 		189277A81A111E66004280A0 /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
-		18D2D9E41A12E7EC005D7E78 /* SimplyStopWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplyStopWatch.swift; sourceTree = "<group>"; };
+		18D2986A1A375DDA00B6AB45 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +89,11 @@
 				189277A81A111E66004280A0 /* MainPage.swift */,
 				185EF9031A12A5DB000762D2 /* AddNewTime.swift */,
 				185EF9011A12A0E5000762D2 /* DataPage.swift */,
-				18D2D9E41A12E7EC005D7E78 /* SimplyStopWatch.swift */,
 				1892778A1A110DC6004280A0 /* Main.storyboard */,
 				1892778D1A110DC6004280A0 /* Images.xcassets */,
 				1892778F1A110DC6004280A0 /* LaunchScreen.xib */,
 				189277851A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld */,
+				18D2986A1A375DDA00B6AB45 /* Data.swift */,
 				189277811A110DC6004280A0 /* Supporting Files */,
 			);
 			path = "Simply StopWatch";
@@ -224,10 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D2986B1A375DDA00B6AB45 /* Data.swift in Sources */,
 				185EF9021A12A0E5000762D2 /* DataPage.swift in Sources */,
 				189277841A110DC6004280A0 /* AppDelegate.swift in Sources */,
 				189277871A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld in Sources */,
-				18D2D9E51A12E7EC005D7E78 /* SimplyStopWatch.swift in Sources */,
 				189277A91A111E66004280A0 /* MainPage.swift in Sources */,
 				185EF9041A12A5DB000762D2 /* AddNewTime.swift in Sources */,
 			);
