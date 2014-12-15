@@ -57,18 +57,10 @@ class AddNewTime: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        descField.becomeFirstResponder()
         duration.text = timerDuration
         
         // Calculate current date & time
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
-        /*
-        let currentDate = NSDate()
-        let formattedDateString = dateFormatter.stringFromDate(currentDate)
-        date.text = formattedDateString
-        */
-        
         let currentDate = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond | .CalendarUnitMonth | .CalendarUnitYear | .CalendarUnitDay, fromDate: currentDate)

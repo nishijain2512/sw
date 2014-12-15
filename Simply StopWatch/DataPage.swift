@@ -12,6 +12,7 @@ import CoreData
 class DataPage: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
     
     @IBOutlet var dataTable: UITableView!
+
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
     var fetchedResultsController: NSFetchedResultsController = NSFetchedResultsController()
@@ -22,8 +23,11 @@ class DataPage: UIViewController, UITableViewDataSource, UITableViewDelegate, NS
         fetchedResultsController = fetchData()
         fetchedResultsController.delegate = self
         fetchedResultsController.performFetch(nil)
+        
+        // To remove the extra scape above table cells
+        self.automaticallyAdjustsScrollViewInsets = false
 
-        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,12 +62,17 @@ class DataPage: UIViewController, UITableViewDataSource, UITableViewDelegate, NS
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        
-        //cell.textLabel?.text = "Deatils"
-        
+        /*let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+                
         cell.textLabel?.text = fetchedResultsController.objectAtIndexPath(indexPath).valueForKey("details") as NSString
         cell.detailTextLabel?.text = fetchedResultsController.objectAtIndexPath(indexPath).valueForKey("duration") as NSString
+        */
+        
+        let cell: DataPageTableCellTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as DataPageTableCellTableViewCell
+        
+        cell.descLabel.text = fetchedResultsController.objectAtIndexPath(indexPath).valueForKey("details") as NSString
+        cell.timeLabel.text = fetchedResultsController.objectAtIndexPath(indexPath).valueForKey("time") as NSString
+        cell.durationLabel.text = fetchedResultsController.objectAtIndexPath(indexPath).valueForKey("duration") as NSString
         
         return cell
     }

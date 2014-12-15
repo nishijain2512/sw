@@ -16,14 +16,29 @@ class MainPage: UIViewController {
     var seconds: Int = 0
     var minutes: Int = 0
     var hours: Int = 0
+    var timerDisplayValue = NSString()
     
     var timer = NSTimer()
 
-    @IBOutlet var timerDisplay: UILabel!
+    //@IBOutlet var timerDisplay: UILabel!
+    @IBOutlet var hourLabel: UILabel!
+    @IBOutlet var minuteLabel: UILabel!
+    @IBOutlet var secondsLabel: UILabel!
+    @IBOutlet var millisecLabel: UILabel!
     @IBOutlet var resetButton: UIBarButtonItem!
     @IBOutlet var playButton: UIBarButtonItem!
     @IBOutlet var stopButton: UIBarButtonItem!
     @IBOutlet var saveButton: UIBarButtonItem!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        stopButton.enabled = false
+        playButton.enabled = true
+        resetButton.enabled = true
+        saveButton.enabled = false
+    }
     
     @IBAction func startPressed(sender: UIBarButtonItem) {
         playButton.enabled = false
@@ -48,7 +63,20 @@ class MainPage: UIViewController {
         var secondsCalculation = seconds - (minutes * 60)
         var millisecondsCalculation = milliseconds - (seconds * 100)
         
-        timerDisplay.text = "\(doubleDigitFormatter(hours)):\(doubleDigitFormatter(minutesCalculation)):\(doubleDigitFormatter(secondsCalculation)).\(doubleDigitFormatter(millisecondsCalculation))"
+        if(hours > 0){
+            hourLabel.text = "\(doubleDigitFormatter(hours)):"
+        }
+        if(minutes > 0){
+            minuteLabel.text = "\(doubleDigitFormatter(minutesCalculation)):"
+        }
+        if(seconds > 0){
+            secondsLabel.text = "\(doubleDigitFormatter(secondsCalculation))."
+        }
+        if(milliseconds > 0){
+            millisecLabel.text = "\(doubleDigitFormatter(millisecondsCalculation))"
+        }
+        
+        timerDisplayValue = "\(doubleDigitFormatter(hours)):\(doubleDigitFormatter(minutesCalculation)):\(doubleDigitFormatter(secondsCalculation)).\(doubleDigitFormatter(millisecondsCalculation))"
         
     }
     
@@ -64,7 +92,11 @@ class MainPage: UIViewController {
     
     @IBAction func resetPressed(sender: UIBarButtonItem) {
         
-        timerDisplay.text = "00:00:00.00"
+        //timerDisplay.text = "00:00:00.00"
+        hourLabel.text = "00:"
+        minuteLabel.text = "00:"
+        secondsLabel.text = "00."
+        millisecLabel.text = "00"
         timeCounter = 0
         playButton.enabled = true
         resetButton.enabled = false
@@ -89,25 +121,13 @@ class MainPage: UIViewController {
         println("Records is Pressed")
 
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        stopButton.enabled = false
-        playButton.enabled = true
-        resetButton.enabled = true
-        saveButton.enabled = false
-    }
-    
+
 
     // MARK: - Navigation
 
@@ -115,7 +135,7 @@ class MainPage: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "toAddNewTimePage"){
             let destination: AddNewTime = segue.destinationViewController as AddNewTime
-            destination.timerDuration = timerDisplay.text!
+            destination.timerDuration = timerDisplayValue
         
         }else if(segue.identifier == "toDataPage"){
             let destination: DataPage = segue.destinationViewController as DataPage
