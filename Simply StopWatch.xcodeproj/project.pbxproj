@@ -10,11 +10,11 @@
 		185EF9021A12A0E5000762D2 /* DataPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185EF9011A12A0E5000762D2 /* DataPage.swift */; };
 		185EF9041A12A5DB000762D2 /* AddNewTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185EF9031A12A5DB000762D2 /* AddNewTime.swift */; };
 		188CD9011A3B483B0015464E /* DataPageTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CD9001A3B483B0015464E /* DataPageTableCellTableViewCell.swift */; };
+		188CD9031A3EA05D0015464E /* DataDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CD9021A3EA05D0015464E /* DataDetails.swift */; };
+		188CD9051A40CABC0015464E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188CD9041A40CABC0015464E /* Images.xcassets */; };
 		189277841A110DC6004280A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189277831A110DC6004280A0 /* AppDelegate.swift */; };
 		189277871A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 189277851A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld */; };
 		1892778C1A110DC6004280A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1892778A1A110DC6004280A0 /* Main.storyboard */; };
-		1892778E1A110DC6004280A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1892778D1A110DC6004280A0 /* Images.xcassets */; };
-		189277911A110DC6004280A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892778F1A110DC6004280A0 /* LaunchScreen.xib */; };
 		1892779D1A110DC6004280A0 /* Simply_StopWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892779C1A110DC6004280A0 /* Simply_StopWatchTests.swift */; };
 		189277A91A111E66004280A0 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189277A81A111E66004280A0 /* MainPage.swift */; };
 		18D2986B1A375DDA00B6AB45 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2986A1A375DDA00B6AB45 /* Data.swift */; };
@@ -34,13 +34,13 @@
 		185EF9011A12A0E5000762D2 /* DataPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPage.swift; sourceTree = "<group>"; };
 		185EF9031A12A5DB000762D2 /* AddNewTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTime.swift; sourceTree = "<group>"; };
 		188CD9001A3B483B0015464E /* DataPageTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPageTableCellTableViewCell.swift; sourceTree = "<group>"; };
+		188CD9021A3EA05D0015464E /* DataDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDetails.swift; sourceTree = "<group>"; };
+		188CD9041A40CABC0015464E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../Assistant/Assistant/Images.xcassets; sourceTree = "<group>"; };
 		1892777E1A110DC6004280A0 /* Simply StopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simply StopWatch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189277821A110DC6004280A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		189277831A110DC6004280A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		189277861A110DC6004280A0 /* Simply_StopWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Simply_StopWatch.xcdatamodel; sourceTree = "<group>"; };
 		1892778B1A110DC6004280A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1892778D1A110DC6004280A0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		189277901A110DC6004280A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		189277961A110DC6004280A0 /* Simply StopWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simply StopWatchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1892779B1A110DC6004280A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1892779C1A110DC6004280A0 /* Simply_StopWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simply_StopWatchTests.swift; sourceTree = "<group>"; };
@@ -92,9 +92,9 @@
 				185EF9031A12A5DB000762D2 /* AddNewTime.swift */,
 				185EF9011A12A0E5000762D2 /* DataPage.swift */,
 				188CD9001A3B483B0015464E /* DataPageTableCellTableViewCell.swift */,
+				188CD9021A3EA05D0015464E /* DataDetails.swift */,
 				1892778A1A110DC6004280A0 /* Main.storyboard */,
-				1892778D1A110DC6004280A0 /* Images.xcassets */,
-				1892778F1A110DC6004280A0 /* LaunchScreen.xib */,
+				188CD9041A40CABC0015464E /* Images.xcassets */,
 				189277851A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld */,
 				18D2986A1A375DDA00B6AB45 /* Data.swift */,
 				189277811A110DC6004280A0 /* Supporting Files */,
@@ -176,6 +176,7 @@
 				TargetAttributes = {
 					1892777D1A110DC6004280A0 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 3JT7YDFTCJ;
 					};
 					189277951A110DC6004280A0 = {
 						CreatedOnToolsVersion = 6.0;
@@ -207,9 +208,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188CD9051A40CABC0015464E /* Images.xcassets in Resources */,
 				1892778C1A110DC6004280A0 /* Main.storyboard in Resources */,
-				189277911A110DC6004280A0 /* LaunchScreen.xib in Resources */,
-				1892778E1A110DC6004280A0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +231,7 @@
 				185EF9021A12A0E5000762D2 /* DataPage.swift in Sources */,
 				189277841A110DC6004280A0 /* AppDelegate.swift in Sources */,
 				189277871A110DC6004280A0 /* Simply_StopWatch.xcdatamodeld in Sources */,
+				188CD9031A3EA05D0015464E /* DataDetails.swift in Sources */,
 				189277A91A111E66004280A0 /* MainPage.swift in Sources */,
 				188CD9011A3B483B0015464E /* DataPageTableCellTableViewCell.swift in Sources */,
 				185EF9041A12A5DB000762D2 /* AddNewTime.swift in Sources */,
@@ -262,14 +263,6 @@
 				1892778B1A110DC6004280A0 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1892778F1A110DC6004280A0 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				189277901A110DC6004280A0 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -356,9 +349,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Simply StopWatch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -366,9 +363,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Simply StopWatch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

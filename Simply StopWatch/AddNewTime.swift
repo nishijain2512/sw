@@ -9,10 +9,12 @@
 import UIKit
 import CoreData
 
-class AddNewTime: UIViewController {
+class AddNewTime: UIViewController, UITextFieldDelegate {
 
     var timerDuration = NSString()
 
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var contentView: UIView!
     @IBOutlet var descField: UITextField!
     @IBOutlet var duration: UILabel!
     @IBOutlet var date: UILabel!
@@ -57,6 +59,22 @@ class AddNewTime: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // To add width constraint for content view
+        
+       // contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        var leftConstraint: NSLayoutConstraint = NSLayoutConstraint(item: self.contentView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Left, multiplier: 1.0, constant: 0.0)
+        self.view.addConstraint(leftConstraint)
+        
+        var rightConstraint: NSLayoutConstraint = NSLayoutConstraint(item: self.contentView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Right, multiplier: 1.0, constant: 0.0)
+        self.view.addConstraint(rightConstraint)
+        
+        //------------------------------
+        
+        //  To make the page scroll
+        self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, 1000)
+        //----------------------------
+        
         descField.becomeFirstResponder()
         duration.text = timerDuration
         
@@ -81,7 +99,17 @@ class AddNewTime: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    //To hide keyboard when return key is pressed or screen is tapped (also added protocol UITextFieldDelegate)
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        descField.resignFirstResponder()
+        return true
+    }
+   
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    //----------------------------------------------------------------------
+    
     /*
     // MARK: - Navigation
 

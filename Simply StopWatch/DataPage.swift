@@ -62,12 +62,6 @@ class DataPage: UIViewController, UITableViewDataSource, UITableViewDelegate, NS
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        /*let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-                
-        cell.textLabel?.text = fetchedResultsController.objectAtIndexPath(indexPath).valueForKey("details") as NSString
-        cell.detailTextLabel?.text = fetchedResultsController.objectAtIndexPath(indexPath).valueForKey("duration") as NSString
-        */
-        
         let cell: DataPageTableCellTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as DataPageTableCellTableViewCell
         
         cell.descLabel.text = fetchedResultsController.objectAtIndexPath(indexPath).valueForKey("details") as NSString
@@ -141,16 +135,22 @@ class DataPage: UIViewController, UITableViewDataSource, UITableViewDelegate, NS
     //--------------------------------------------------------------------------------------------------------
 
 
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if(segue.identifier == "ToDataDetailsPage"){
+            let destination: DataDetails = segue.destinationViewController as DataDetails
+            let myIndexPath = self.dataTable.indexPathForSelectedRow()
+            
+            destination.desc = fetchedResultsController.objectAtIndexPath(myIndexPath!).valueForKey("details") as NSString
+            destination.duration = fetchedResultsController.objectAtIndexPath(myIndexPath!).valueForKey("duration") as NSString
+            destination.date = fetchedResultsController.objectAtIndexPath(myIndexPath!).valueForKey("date") as NSString
+            destination.time = fetchedResultsController.objectAtIndexPath(myIndexPath!).valueForKey("time") as NSString
+        }
     }
-    */
+    
 
 }
 
