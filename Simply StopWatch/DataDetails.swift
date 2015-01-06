@@ -8,12 +8,9 @@
 
 import UIKit
 
-class DataDetails: UIViewController {
+class DataDetails: UIViewController, DescriptionDelegate {
 
-    var desc = NSString()
-    var duration = NSString()
-    var date = NSString()
-    var time = NSString()
+    var data: Data? = nil
     
     
     @IBOutlet var scrollView: UIScrollView!
@@ -30,10 +27,10 @@ class DataDetails: UIViewController {
         //  To make the page scroll
         self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, 1000)
         //----------------------------
-        DescData.text = desc
-        durationData.text = duration
-        dateData.text = date
-        timeData.text = time
+        DescData.text = data?.details
+        durationData.text = data?.duration
+        dateData.text = data?.date
+        timeData.text = data?.time
         
         // To add width constraint for content view
         
@@ -49,21 +46,27 @@ class DataDetails: UIViewController {
         
         println(scrollView)
     }
+    
+    func updatedDescription(description: NSString){
+        DescData.text = description
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if(segue.identifier == "editData"){
+            let destination: AddNewTime = segue.destinationViewController as AddNewTime
+            destination.data = data
+            
+            //Store reference to this view controller to the delegate of destination view controller
+            destination.delegate = self
+            
+        }
     }
-    */
+
 
 }

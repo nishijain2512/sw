@@ -493,7 +493,13 @@
                             <constraint firstItem="dE2-1I-h4V" firstAttribute="top" secondItem="a7O-Uw-bDZ" secondAttribute="bottom" id="iZx-gt-ZHb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="3QS-aR-sE7"/>
+                    <navigationItem key="navigationItem" title="Details" id="3QS-aR-sE7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="RHu-gM-A4E">
+                            <connections>
+                                <segue destination="K1P-P4-QhD" kind="show" identifier="editData" id="JMP-jn-kaf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="DescData" destination="37Q-ex-lJE" id="lG0-he-4Ga"/>
@@ -532,4 +538,7 @@
             <point key="canvasLocation" x="350" y="-400"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JMP-jn-kaf"/>
+    </inferredMetricsTieBreakers>
 </document>

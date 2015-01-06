@@ -29,6 +29,9 @@ class DataPage: UIViewController, UITableViewDataSource, UITableViewDelegate, NS
 
 
     }
+    override func viewWillAppear(animated: Bool) {
+        dataTable.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -38,8 +41,9 @@ class DataPage: UIViewController, UITableViewDataSource, UITableViewDelegate, NS
     func fetchData() -> NSFetchedResultsController{
         
         let fetchRequest = NSFetchRequest(entityName: "Data")
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        let sortByDate = NSSortDescriptor(key: "date", ascending: false)
+        let sortByTime = NSSortDescriptor(key: "time", ascending: false)
+        fetchRequest.sortDescriptors = [sortByDate, sortByTime]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: "date", cacheName: nil)
         
@@ -132,6 +136,7 @@ class DataPage: UIViewController, UITableViewDataSource, UITableViewDelegate, NS
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
         dataTable.endUpdates()
     }
+    
     //--------------------------------------------------------------------------------------------------------
 
 
@@ -143,11 +148,10 @@ class DataPage: UIViewController, UITableViewDataSource, UITableViewDelegate, NS
         if(segue.identifier == "ToDataDetailsPage"){
             let destination: DataDetails = segue.destinationViewController as DataDetails
             let myIndexPath = self.dataTable.indexPathForSelectedRow()
+            let data: Data = fetchedResultsController.objectAtIndexPath(myIndexPath!) as Data
+
+            destination.data = data
             
-            destination.desc = fetchedResultsController.objectAtIndexPath(myIndexPath!).valueForKey("details") as NSString
-            destination.duration = fetchedResultsController.objectAtIndexPath(myIndexPath!).valueForKey("duration") as NSString
-            destination.date = fetchedResultsController.objectAtIndexPath(myIndexPath!).valueForKey("date") as NSString
-            destination.time = fetchedResultsController.objectAtIndexPath(myIndexPath!).valueForKey("time") as NSString
         }
     }
     

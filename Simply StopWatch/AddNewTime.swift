@@ -9,9 +9,15 @@
 import UIKit
 import CoreData
 
+protocol DescriptionDelegate{
+    func updatedDescription(description: NSString)
+}
+
 class AddNewTime: UIViewController, UITextFieldDelegate {
 
     var timerDuration = NSString()
+    var data: Data? = nil
+    var delegate: DescriptionDelegate? = nil
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
@@ -31,27 +37,13 @@ class AddNewTime: UIViewController, UITextFieldDelegate {
             alert.addAction(OK)
             presentViewController(alert, animated: true, completion: nil)
             
+        }
+        
+        if (data != nil){
+            editData()
+            
         }else{
-            
-            var newEntity = NSEntityDescription.insertNewObjectForEntityForName("Data", inManagedObjectContext: managedObjectContext) as Data
-            newEntity.date = date.text!
-            newEntity.details = descField.text
-            newEntity.duration = duration.text!
-            newEntity.time = time.text!
-            
-            managedObjectContext.save(nil)
-            
-            /*let fetchRequest = NSFetchRequest(entityName: "Data")
-            var results = managedObjectContext.executeFetchRequest(fetchRequest, error: nil)
-            for result in results!
-            {
-                println(result)
-                println(result.valueForKey("duration"))
-                println(result.valueForKey("details"))
-                
-            }*/
-            
-            self.navigationController?.popViewControllerAnimated(true)
+            createData()
         }
         
     }
@@ -60,8 +52,6 @@ class AddNewTime: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         // To add width constraint for content view
-        
-       // contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
         
         var leftConstraint: NSLayoutConstraint = NSLayoutConstraint(item: self.contentView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Left, multiplier: 1.0, constant: 0.0)
         self.view.addConstraint(leftConstraint)
@@ -76,24 +66,71 @@ class AddNewTime: UIViewController, UITextFieldDelegate {
         //----------------------------
         
         descField.becomeFirstResponder()
-        duration.text = timerDuration
         
-        // Calculate current date & time
-        let currentDate = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond | .CalendarUnitMonth | .CalendarUnitYear | .CalendarUnitDay, fromDate: currentDate)
-        let hour = components.hour
-        let minutes = components.minute
-        let seconds = components.second
-        let month = components.month
-        let year = components.year
-        let day = components.day
-        
-        time.text = "\(hour):\(minutes):\(seconds)"
-        date.text = "\(month)/\(day)/\(year)"
+        if (data != nil){
+            // when existing data need to be edited
+            descField.text = data?.details
+            duration.text = data?.duration
+            date.text = data?.date
+            time.text = data?.time
+            
+        }else{
+            // When new data need to be added
+            duration.text = timerDuration
+            
+            // Calculate current date & time
+            let currentDate = NSDate()
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond | .CalendarUnitMonth | .CalendarUnitYear | .CalendarUnitDay, fromDate: currentDate)
+            let hour = components.hour
+            let minutes = components.minute
+            let seconds = components.second
+            let month = components.month
+            let year = components.year
+            let day = components.day
+            
+            time.text = "\(doubleDigitConverter(hour)):\(doubleDigitConverter(minutes)):\(doubleDigitConverter(seconds))"
+            date.text = "\(doubleDigitConverter(month))/\(doubleDigitConverter(day))/\(doubleDigitConverter(year))"
+        }
         
     }
-
+    
+    func doubleDigitConverter(input: Int) -> NSString{
+        if (input < 10){
+            return("0\(input)")
+            
+        }else{
+            return("\(input)")
+        }
+    }
+    
+    func createData(){
+        var newEntity = NSEntityDescription.insertNewObjectForEntityForName("Data", inManagedObjectContext: managedObjectContext) as Data
+        newEntity.date = date.text!
+        newEntity.details = descField.text
+        newEntity.duration = duration.text!
+        newEntity.time = time.text!
+        
+        managedObjectContext.save(nil)
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func editData(){
+        
+        data?.details = descField.text
+        data?.duration = duration.text!
+        data?.date = date.text!
+        data?.time = time.text!
+        managedObjectContext.save(nil)
+        
+        // To send new description to DataDetails Page
+        delegate!.updatedDescription(descField.text as NSString)
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
